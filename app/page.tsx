@@ -42,15 +42,25 @@ export default function Home() {
   return (
     <>
       <div className=" grid grid-cols-1 lg:grid-cols-2  bg-[#c4294a] h-full">
-        <div className=" h-full p-10">
+        <div className=" h-full px-10 pt-10  md:p-10">
           <p className="mt-10 md:mt-1 text-[30px] xl:text-[50px] md:text-[25px] md:font-bold md:leading-[55px] text-[#edeaea] text-center">
             பாராளுமன்ற தேர்தல் 2024
           </p>
           <p className="text-[20px] md:text-[20px] xl:text-[50px] md:font-bold  text-[#edeaea] text-center">
             யாழ் மாவட்டம்
           </p>
-          <div className="mt-10 grid grid-cols-3 ">
-            <div className="col-span-1 xl:hidden">
+
+          <div className="col-span-2 pl-5 mt-10 lg:mt-20 xl:mt-10">
+            <p className="text-[30px] md:text-[30px] xl:text-[40px] md:font-bold  text-[#edeaea] text-center lg:text-start">
+              திரு. உதயகுமாரன் கீர்த்தி
+            </p>
+
+            <p className="md:text-[20px] md:font-semibold xl:text-[20px] text-[#edeaea] text-center lg:text-start">
+              ( BSC( HONS ) IN SOFTWARE ENGINEERING )
+            </p>
+          </div>
+          <div className="lg:mt-10 grid grid-cols-3 ">
+            {/* <div className="col-span-1 lg:hidden">
               <Image
                 src="/images/logo.webp"
                 alt={"presidnet image"}
@@ -58,7 +68,23 @@ export default function Home() {
                 height={150}
               />
             </div>
-            <div className="col-span-1 hidden xl:block">
+            <div className="col-span-1 lg:hidden bg-white pt-4">
+              <Image
+                src="/images/one.png"
+                alt={"presidnet image"}
+                width={350}
+                height={350}
+              />
+            </div>
+            <div className="col-span-1 lg:hidden bg-white p-5">
+              <Image
+                src="/images/x-image.png"
+                alt={"presidnet image"}
+                width={350}
+                height={350}
+              />
+            </div> */}
+            <div className="col-span-1 hidden lg:block ">
               <Image
                 src="/images/logo.webp"
                 alt={"presidnet image"}
@@ -66,24 +92,68 @@ export default function Home() {
                 height={350}
               />
             </div>
-            <div className="col-span-2 pl-5 mt-5">
-              <p className="text-[20px] md:text-[15px] xl:text-[40px] md:font-bold  text-[#edeaea]">
-                திரு. உதயகுமாரன் கீர்த்தி
-              </p>
-
-              <p className="md:text-[10px] md:font-semibold xl:text-[20px] text-[#edeaea]">
-                ( BSC( HONS ) IN SOFTWARE ENGINEERING )
-              </p>
+            <div className="col-span-1 hidden lg:block bg-white pt-4 ml-4">
+              <Image
+                src="/images/one.png"
+                alt={"presidnet image"}
+                width={350}
+                height={350}
+              />
+            </div>
+            <div className="col-span-1 hidden lg:block bg-white p-5 ml-4">
+              <Image
+                src="/images/x-image.png"
+                alt={"presidnet image"}
+                width={350}
+                height={350}
+              />
             </div>
           </div>
         </div>
         <div className="flex items-center justify-center h-full p-10 ">
-          <Image
-            src="/images/keerthy.jpeg"
-            alt={"presidnet image"}
-            width={371}
-            height={255}
-          />
+          <div className=" hidden lg:flex">
+            <Image
+              src="/images/keerthy.jpeg"
+              alt={"presidnet image"}
+              width={571}
+              height={355}
+            />
+          </div>
+          <div className=" lg:hidden ">
+            <Image
+              src="/images/keerthy2.jpg"
+              alt={"presidnet image"}
+              width={500}
+              height={355}
+              className="w-full "
+            />
+          </div>
+        </div>
+        <div className="mt-10 grid grid-cols-3 ">
+          <div className="col-span-1 lg:hidden">
+            <Image
+              src="/images/logo.webp"
+              alt={"presidnet image"}
+              width={350}
+              height={350}
+            />
+          </div>
+          <div className="col-span-1 lg:hidden bg-white pt-4">
+            <Image
+              src="/images/one.png"
+              alt={"presidnet image"}
+              width={350}
+              height={350}
+            />
+          </div>
+          <div className="col-span-1 lg:hidden bg-white p-5">
+            <Image
+              src="/images/x-image.png"
+              alt={"presidnet image"}
+              width={350}
+              height={350}
+            />
+          </div>
         </div>
       </div>
 
