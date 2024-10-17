@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Keerthy-npp",
   description: "keerthy npp",
-  icons: "/images/compass.svg",
+  icons:
+    "https://p7.hiclipart.com/preview/687/666/501/compass-rose-clip-art-compass.jpg",
 };
 
 export default function RootLayout({

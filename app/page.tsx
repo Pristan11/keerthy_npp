@@ -7,11 +7,14 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [mobileNo, setMobileNo] = useState("");
   const [message, setMessage] = useState("");
+  const [voteRequestSuccess, setVoteRequestSuccess] = useState(false);
+  const [formRequestSuccess, setFormRequestSuccess] = useState(false);
 
   const voteApi = (response: string) => {
     axios
       .post("http://localhost:5000/api/vote", { vote: response })
       .then((res) => {
+        setVoteRequestSuccess(true);
         console.log("voteApi----", res);
       })
       .catch((err) => {
@@ -29,6 +32,7 @@ export default function Home() {
     axios
       .post("http://localhost:5000/api/contact", request)
       .then((res) => {
+        setFormRequestSuccess(true);
         console.log("voteApi----", res);
         setName("");
         setEmail("");
@@ -220,21 +224,27 @@ export default function Home() {
           <p className="md:text-[30px] md:font-bold md:leading-[55px] text-[#680241] text-center">
             நீங்கள் திசைகாட்டிக்கு வாக்களிப்பீர்களா?
           </p>
-          <div className="flex content-center justify-center mt-5 ">
-            <p
-              className="border-[#680241] border-2 px-3 py-1 font-bold rounded-[5px] text-[#680241] text-center hover:text-white hover:bg-[#680241] hover:cursor-pointer"
-              onClick={() => voteApi("yes")}
-            >
-              ஆம்
+          {!voteRequestSuccess ? (
+            <div className="flex content-center justify-center mt-5 ">
+              <p
+                className="border-[#680241] border-2 px-3 py-1 font-bold rounded-[5px] text-[#680241] text-center hover:text-white hover:bg-[#680241] hover:cursor-pointer"
+                onClick={() => voteApi("yes")}
+              >
+                ஆம்
+              </p>
+              <div className="w-[20px]" />
+              <p
+                className="border-[#680241] border-2 px-3 py-1 font-bold rounded-[5px] text-[#680241] text-center hover:text-white hover:bg-[#680241] hover:cursor-pointer"
+                onClick={() => voteApi("no")}
+              >
+                இல்லை
+              </p>
+            </div>
+          ) : (
+            <p className="border-[#680241]  px-3 py-1 font-bold rounded-[5px] text-[#680241] text-center hover:text-white hover:bg-[#680241] hover:cursor-pointer">
+              உங்கள் பதிலுக்கு நன்றி!
             </p>
-            <div className="w-[20px]" />
-            <p
-              className="border-[#680241] border-2 px-3 py-1 font-bold rounded-[5px] text-[#680241] text-center hover:text-white hover:bg-[#680241] hover:cursor-pointer"
-              onClick={() => voteApi("no")}
-            >
-              இல்லை
-            </p>
-          </div>
+          )}
         </div>
 
         <div className="m-10 border-2 rounded-lg border-[#680241] p-5 flex flex-col max-w-[400px]">
@@ -267,10 +277,16 @@ export default function Home() {
             rows={5}
           />
           <p
-            className="bg-[#680241] px-5 py-2 rounded-lg w-1/4 text-white text-[12px] cursor-pointer font-bold"
-            onClick={() => messageApi()}
+            className="bg-[#680241] px-5 py-2 rounded-lg w-full text-center text-white text-[12px] cursor-pointer font-bold"
+            onClick={() => {
+              if (!formRequestSuccess) {
+                messageApi();
+              }
+            }}
           >
-            Submit
+            {formRequestSuccess
+              ? "Thank you! We have received your response."
+              : "Submit"}
           </p>
         </div>
       </div>
