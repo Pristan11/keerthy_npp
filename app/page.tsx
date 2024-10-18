@@ -12,7 +12,7 @@ export default function Home() {
 
   const voteApi = (response: string) => {
     axios
-      .post("http://localhost:5000/api/vote", { vote: response })
+      .post("https://api.keerthynpp.com/api/vote", { vote: response })
       .then((res) => {
         setVoteRequestSuccess(true);
         console.log("voteApi----", res);
@@ -30,7 +30,7 @@ export default function Home() {
       message: message,
     };
     axios
-      .post("http://localhost:5000/api/contact", request)
+      .post("https://api.keerthynpp.com/api/contact", request)
       .then((res) => {
         setFormRequestSuccess(true);
         console.log("voteApi----", res);
