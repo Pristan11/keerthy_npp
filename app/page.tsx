@@ -125,7 +125,7 @@ export default function Home() {
           </div>
           <div className=" lg:hidden ">
             <Image
-              src="/images/keerthy2.jpg"
+              src="/images/keerthy2.JPG"
               alt={"presidnet image"}
               width={500}
               height={355}
