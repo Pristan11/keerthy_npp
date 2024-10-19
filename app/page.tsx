@@ -12,7 +12,7 @@ export default function Home() {
 
   const voteApi = (response: string) => {
     axios
-      .post("http://localhost:5000/api/vote", { vote: response })
+      .post("https://api.keerthynpp.com/api/vote", { vote: response })
       .then((res) => {
         setVoteRequestSuccess(true);
         console.log("voteApi----", res);
@@ -30,7 +30,7 @@ export default function Home() {
       message: message,
     };
     axios
-      .post("http://localhost:5000/api/contact", request)
+      .post("https://api.keerthynpp.com/api/contact", request)
       .then((res) => {
         setFormRequestSuccess(true);
         console.log("voteApi----", res);
@@ -387,27 +387,27 @@ export default function Home() {
           <input
             type="name"
             placeholder="Name"
-            className=" p-2 outline-none my-2 "
+            className=" p-2 outline-none my-2 text-black"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
             type="tel"
             placeholder="Phone Number"
-            className=" p-2 outline-none my-2 "
+            className=" p-2 outline-none my-2 text-black"
             value={mobileNo}
             onChange={(e) => setMobileNo(e.target.value)}
           />
           <input
             type="email"
             placeholder="Email"
-            className=" p-2 outline-none my-2 "
+            className=" p-2 outline-none my-2 text-black"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <textarea
             placeholder="Message"
-            className=" p-2 outline-none my-2 "
+            className=" p-2 outline-none my-2 text-black"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             rows={5}
