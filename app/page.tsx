@@ -384,6 +384,11 @@ export default function Home() {
         </div>
 
         <div className="m-10 border-2 rounded-lg border-[#680241] p-5 flex flex-col max-w-[400px]">
+
+          <p className="md:text-[30px] md:font-bold md:leading-[55px] text-[#680241] text-center">
+            தொடர்பு கொள்ள
+          </p>
+
           <input
             type="name"
             placeholder="Name"
